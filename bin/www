@@ -1,0 +1,8 @@
+#!/bin/node
+
+const app = require('../index')
+const config = require('../config');
+
+app.listen(config.api.port, () => {
+  console.log(`RaspConfig API is running on http://127.0.0.1:${config.api.port}`)
+});
