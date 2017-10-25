@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Douglas Zuqueto <douglas.zuqueto@gmail.com>",
   "license": "MIT",
+  "repository": "https://github.com/raspi-config/node-api",
   "scripts": {
     "dev": "nodemon bin/www",
     "prod": "pm2 start --name raspiconfig-api"
