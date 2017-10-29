@@ -12,8 +12,8 @@ router.get('/', (req, res) => {
   });
 });
 
-router.use('/pages/', require('./pages'));
-router.use('/rasp/', require('./rasp'));
+router.use('/pages', require('./pages'));
+router.use('/rasp', require('./rasp'));
 
 module.exports = router;
 
