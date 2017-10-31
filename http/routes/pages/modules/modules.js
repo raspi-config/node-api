@@ -1,8 +1,4 @@
-const express = require('express')
-  , router = express.Router();
-
-
-/* Routes */
+const router = require('express').Router();
 
 const get = async (req, res) => {
   res.json([

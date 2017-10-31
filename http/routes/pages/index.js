@@ -1,8 +1,6 @@
-const express = require('express')
-  , router = express.Router();
+const router = require('express').Router();
 
-router.use('/dashboard', require('./dashboard'));
-router.use('/modules', require('./modules'));
-router.use('/wireless', require('./wireless'));
+router.use('/dashboard', require('./dashboard/dashboard'));
+router.use('/modules', require('./modules/modules'));
 
 module.exports = router;

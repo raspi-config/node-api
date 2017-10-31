@@ -6,16 +6,14 @@ router.get('/', (req, res) => {
   res.json({
     'apiUrl': apiUrl,
     'endpoints': {
-      'pages': `${apiUrl}/pages`,
-      'rasp': `${apiUrl}/rasp`,
     }
   });
 });
 
+router.use('/pages', require('./pages/index'));
+
 router.use('/rasp', require('./rasp'));
 router.use('/wifi', require('./wifi'));
-
-router.use('/pages', require('./pages/index'));
 
 module.exports = router;
 

@@ -1,7 +1,6 @@
-const express = require('express')
-  , router = express.Router();
+const router = require('express').Router();
 
-const commands = require('../../../raspbian/index');
+const commands = require('../../../../raspbian/index');
 /* Routes */
 
 const get = async (req, res) => {
