@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const commands = require('../../raspbian');
+const commands = require('../../../raspbian/index');
 
 const getListWifi = async (req, res) => {
   res.json(await commands.network.wifi.scan());

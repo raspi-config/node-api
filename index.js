@@ -4,9 +4,9 @@ const app = require('express')();
 require('dotenv').load();
 
 /* Middlewares */
-require('./http/middlewares')(app);
+require('./http/middlewares/middlewares')(app);
 
 /* Routes */
-app.use('/api/v1', require('./routes'));
+app.use('/api/v1', require('./http/routes'));
 
 module.exports = app;

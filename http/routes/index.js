@@ -12,8 +12,10 @@ router.get('/', (req, res) => {
   });
 });
 
-router.use('/pages', require('./pages'));
 router.use('/rasp', require('./rasp'));
+router.use('/wifi', require('./wifi'));
+
+router.use('/pages', require('./pages/index'));
 
 module.exports = router;
 
