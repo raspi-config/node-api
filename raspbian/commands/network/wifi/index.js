@@ -2,6 +2,9 @@ const raspbian = require('../../base');
 
 const commands = {
   'scan': "sudo iwlist wlan0 scan | grep 'ESSID' | sed -r 's/\\s+ //g' | cut -d':' -f2 | tr -d '\"\' | tr '\\n' '@'",
+  'ssid': "sudo iwgetid -r | tr -d '\\n'",
+  'link_quality': "iwconfig wlan0 | grep 'Link Quality' | sed -r 's/\\/s+ //g' | cut -d'=' -f2 | cut -d' ' -f1 | tr -d '\\n'",
+  'ip': "ifconfig wlan0 | sed -n '2 p' | awk '{print $2}' | tr -d '\\n'"
 };
 
 async function scan() {
@@ -27,6 +30,27 @@ async function scan() {
   return results;
 }
 
+async function ssid() {
+  const results = await raspbian.execute(commands.ssid);
+
+  return results.data;
+}
+
+async function linkQuality() {
+  const results = await raspbian.execute(commands.link_quality);
+
+  return results.data;
+}
+
+async function ip() {
+  const results = await raspbian.execute(commands.ip);
+
+  return results.data;
+}
+
 module.exports = {
-  scan
+  scan,
+  ssid,
+  linkQuality,
+  ip
 };
