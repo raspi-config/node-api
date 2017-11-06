@@ -14,6 +14,7 @@ router.use('/pages', require('./pages/index'));
 
 router.use('/rasp', require('./rasp'));
 router.use('/wifi', require('./wifi'));
+router.use('/apt', require('./apt'));
 
 module.exports = router;
 
